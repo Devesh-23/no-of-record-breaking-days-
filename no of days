@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    int a[n+1];
+    a[n]=-1;   //as need to compare for i+1 iteration
+    cout<<"enter the size of the array: ";
+    cin>>n;
+    cout<<"enter the elements of the array: "<<endl;
+    for(int i=1;i<=n;i++){
+        cin>>a[i];
+    }
+    
+    if(n==1){
+        return 1;
+    }
+    
+    
+    int ans=0;
+    int maxno=-1;
+    for(int i=0;i<n;i++){
+        if(a[i]>maxno && a[i]>a[i+1]){
+            ans++;
+        }
+        maxno=max(maxno,a[i]);
+    }
+    cout<<"no of days: "<<ans<<endl;
+    return 0;
+    
+}
